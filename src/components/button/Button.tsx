@@ -1,20 +1,17 @@
-import styled from "styled-components";
-import { ButtonProps } from "./Button.types";
-// @ts-ignore
+import styled from 'styled-components';
+import { ButtonProps } from './Button.types';
+
 const StyledButton = styled.button<{
   backgroundColor?: string;
   disabled?: boolean;
 }>`
-  padding: 12px 20px;
+  padding: 12px 19px;
   border: none;
   border-radius: 4px;
-  cursor: ${(props) =>
-    props.disabled ? "not-allowed" : "pointer"};
+  cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
 
-  background-color: ${(props) =>
-    props.disabled
-      ? "#cccccc"
-      : props.backgroundColor || "#007bff"};
+  background-color: ${props =>
+    props.disabled ? '#cccccc' : props.backgroundColor || '#007bff'};
 
   color: white;
 
@@ -25,12 +22,7 @@ const StyledButton = styled.button<{
   }
 `;
 
-const Button = ({
-  label,
-  backgroundColor,
-  disabled,
-  onClick
-}: ButtonProps) => {
+const Button = ({ label, backgroundColor, disabled, onClick }: ButtonProps) => {
   return (
     <StyledButton
       backgroundColor={backgroundColor}
