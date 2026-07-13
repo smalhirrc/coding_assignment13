@@ -21,8 +21,9 @@
     "rollup": "rollup -c --bundleConfigAsCjs",
     "storybook": "storybook dev -p 6006 -p 8083",
     "build-storybook": "storybook build",
-    "lint":"eslint",
-    "format": "prettier --write src" 
+    "lint": "eslint",
+    "format": "prettier --write src",
+    "prepare": "husky"
   },
   "eslintConfig": {
     "extends": [
@@ -78,5 +79,14 @@
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.64.0",
     "webpack": "^5.107.2"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "src/**/*.{json,css,md}": [
+      "prettier --write"
+    ]
   }
 }
