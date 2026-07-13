@@ -1,34 +1,19 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen } from '@testing-library/react';
 
-import Button from "./Button";
+import Button from './Button';
 
-describe("Button", () => {
-
-  test("renders button", () => {
-
+describe('Button', () => {
+  test('renders button', () => {
     render(<Button label="Submit" />);
 
-    expect(
-      screen.getByText("Submit")
-    ).toBeInTheDocument();
-
+    expect(screen.getByText('Submit')).toBeInTheDocument();
   });
 
-  test("disabled button has grey background", () => {
+  test('disabled button has grey background', () => {
+    render(<Button label="Submit" disabled />);
 
-    render(
-      <Button
-        label="Submit"
-        disabled
-      />
-    );
+    const button = screen.getByText('Submit');
 
-    const button = screen.getByText("Submit");
-
-    expect(button).toHaveStyle(
-      "background-color: #cccccc"
-    );
-
+    expect(button).toHaveStyle('background-color: #cccccc');
   });
-
 });

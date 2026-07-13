@@ -23,14 +23,21 @@ jobs:
     - name: Install dependencies
       run: npm install --legacy-peer-deps
 
-    # 1. Checks Prettier code-style and formatting
-    - name: Run Prettier Check
-      run: npx prettier --check src
+    # Runs Prettier and actively fixes any formatting errors
+    - name: Run Prettier and Auto-Fix Styles
+      run: npx prettier --write src
 
-    # 2. Checks ESLint rules (fails if custom configurations are broken)
+    # Automatically commits and pushes Prettier's fixes back to your repo
+    - name: Commit and Push Prettier Fixes
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        commit_message: "style: automated prettier formatting fixes"
+
+
+    # Checks ESLint rules (fails if custom configurations are broken)
     - name: Run ESLint Verification
       run: npm run lint
 
-    # 3. Runs testing suite and immediately exits (CI safe mode)
+    # Runs testing suite and immediately exits (CI safe mode)
     - name: Run Application Tests
       run: CI=true npm test
