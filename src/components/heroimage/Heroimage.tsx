@@ -1,9 +1,9 @@
-import styled from "styled-components";
-import { HeroImageProps } from "./Heroimage.types";
+import styled from 'styled-components';
+import { HeroImageProps } from './Heroimage.types';
 
 const HeroContainer = styled.div<{
-  imageUrl: string;
-  disabled?: boolean;
+  $imageUrl: string;
+  $disabled?: boolean;
 }>`
   width: 100%;
   min-height: 300px;
@@ -15,15 +15,13 @@ const HeroContainer = styled.div<{
 
   text-align: center;
 
-  background-image: url(${(props) => props.imageUrl});
+  background-image: url(${props => props.$imageUrl});
   background-size: cover;
   background-position: center;
 
-  opacity: ${(props) =>
-    props.disabled ? 0.5 : 1};
+  opacity: ${props => (props.$disabled ? 0.5 : 1)};
 
-  cursor: ${(props) =>
-    props.disabled ? "not-allowed" : "default"};
+  cursor: ${props => (props.$disabled ? 'not-allowed' : 'default')};
 
   @media (min-width: 768px) {
     min-height: 500px;
@@ -40,23 +38,16 @@ const Subtitle = styled.p`
   margin: 0;
 `;
 
-const HeroImage = ({
-  imageUrl,
-  title,
-  subtitle,
-  disabled,
-}: HeroImageProps) => {
+const HeroImage = ({ imageUrl, title, subtitle, disabled }: HeroImageProps) => {
   return (
     <HeroContainer
-      imageUrl={imageUrl}
-      disabled={disabled}
+      $imageUrl={imageUrl}
+      $disabled={disabled}
       data-testid="hero-image"
     >
       <Title>{title}</Title>
 
-      {subtitle && (
-        <Subtitle>{subtitle}</Subtitle>
-      )}
+      {subtitle && <Subtitle>{subtitle}</Subtitle>}
     </HeroContainer>
   );
 };
