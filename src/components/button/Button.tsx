@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { ButtonProps } from './Button.types';
-// @ts-ignore
+
 const StyledButton = styled.button<{
   backgroundColor?: string;
   disabled?: boolean;
