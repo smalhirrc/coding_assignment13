@@ -21,7 +21,7 @@ jobs:
         cache: 'npm'
 
     - name: Install dependencies
-      run: npm install
+      run: npm install --legacy-peer-deps
 
     # 1. Checks Prettier code-style and formatting
     - name: Run Prettier Check
