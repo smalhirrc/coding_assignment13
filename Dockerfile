@@ -8,7 +8,7 @@ RUN apk add --no-cache git
 ENV NODE_ENV=development
 
 
-WORKDIR /Malhi_Sukhpreet_ui_garden
+WORKDIR /Malhi_Sukhpreet_ui_garden_build_checks
 
 COPY package*.json ./
 
