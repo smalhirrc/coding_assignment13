@@ -21,7 +21,8 @@
     "rollup": "rollup -c --bundleConfigAsCjs",
     "storybook": "storybook dev -p 6006 -p 8083",
     "build-storybook": "storybook build",
-    "lint":"eslint"
+    "lint":"eslint",
+    "format": "prettier --write src" 
   },
   "eslintConfig": {
     "extends": [

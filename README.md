@@ -1,5 +1,9 @@
 # React Component Library
 
+## Dependencies
+Run - 'npm install'
+if getting errors Run - 'npm install --legacy-peer-deps'
+
 ## Build Docker Image
 
 ```bash
