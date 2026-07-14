@@ -1,39 +1,22 @@
-import { render, screen } from "@testing-library/react";
-import "@testing-library/jest-dom";
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 
-import Card from "./Card";
+import Card from './Card';
 
-describe("Card Component", () => {
-  test("renders card content", () => {
-    render(
-      <Card
-        title="Profile"
-        description="User information"
-      />
-    );
+describe('Card Component', () => {
+  test('renders card content', () => {
+    render(<Card title="Profile" description="User information" />);
 
-    expect(
-      screen.getByText("Profile")
-    ).toBeInTheDocument();
+    expect(screen.getByText('Profile')).toBeInTheDocument();
 
-    expect(
-      screen.getByText("User information")
-    ).toBeInTheDocument();
+    expect(screen.getByText('User information')).toBeInTheDocument();
   });
 
-  test("changes background color when disabled", () => {
-    render(
-      <Card
-        title="Profile"
-        description="User information"
-        disabled
-      />
-    );
+  test('changes background color when disabled', () => {
+    render(<Card title="Profile" description="User information" disabled />);
 
-    const card = screen.getByTestId("card");
+    const card = screen.getByTestId('card');
 
-    expect(card).toHaveStyle(
-      "background-color: #cccccc"
-    );
+    expect(card).toHaveStyle('background-color: #cccccc');
   });
 });

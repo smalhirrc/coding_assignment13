@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { TableProps } from "./Table.types";
+import styled from 'styled-components';
+import { TableProps } from './Table.types';
 
 const StyledTable = styled.table<{
   backgroundColor?: string;
@@ -8,16 +8,12 @@ const StyledTable = styled.table<{
   width: 100%;
   border-collapse: collapse;
 
-  background-color: ${(props) =>
-    props.disabled
-      ? "#cccccc"
-      : props.backgroundColor || "#ffffff"};
+  background-color: ${props =>
+    props.disabled ? '#cccccc' : props.backgroundColor || '#ffffff'};
 
-  opacity: ${(props) =>
-    props.disabled ? 0.7 : 1};
+  opacity: ${props => (props.disabled ? 0.7 : 1)};
 
-  cursor: ${(props) =>
-    props.disabled ? "not-allowed" : "default"};
+  cursor: ${props => (props.disabled ? 'not-allowed' : 'default')};
 
   @media (max-width: 768px) {
     font-size: 0.9rem;
@@ -28,8 +24,7 @@ const TableHeader = styled.thead`
   background-color: #f2f2f2;
 `;
 
-const TableRow = styled.tr`
-`;
+const TableRow = styled.tr``;
 
 const TableCell = styled.td`
   border: 1px solid #dddddd;
@@ -62,10 +57,8 @@ const Table = ({
     >
       <TableHeader>
         <TableRow>
-          {headers.map((header) => (
-            <HeaderCell key={header}>
-              {header}
-            </HeaderCell>
+          {headers.map(header => (
+            <HeaderCell key={header}>{header}</HeaderCell>
           ))}
         </TableRow>
       </TableHeader>
@@ -74,9 +67,7 @@ const Table = ({
         {data.map((row, rowIndex) => (
           <TableRow key={rowIndex}>
             {row.map((cell, cellIndex) => (
-              <TableCell key={cellIndex}>
-                {cell}
-              </TableCell>
+              <TableCell key={cellIndex}>{cell}</TableCell>
             ))}
           </TableRow>
         ))}
@@ -86,9 +77,7 @@ const Table = ({
         <TableFooter>
           <TableRow>
             {footer.map((item, index) => (
-              <TableCell key={index}>
-                {item}
-              </TableCell>
+              <TableCell key={index}>{item}</TableCell>
             ))}
           </TableRow>
         </TableFooter>

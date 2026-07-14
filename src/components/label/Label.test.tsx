@@ -1,32 +1,20 @@
-import { render, screen } from "@testing-library/react";
-import "@testing-library/jest-dom";
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 
-import Label from "./Label";
+import Label from './Label';
 
-describe("Label Component", () => {
-  test("renders label text", () => {
-    render(
-      <Label text="Username" />
-    );
+describe('Label Component', () => {
+  test('renders label text', () => {
+    render(<Label text="Username" />);
 
-    expect(
-      screen.getByText("Username")
-    ).toBeInTheDocument();
+    expect(screen.getByText('Username')).toBeInTheDocument();
   });
 
-  test("changes color when disabled", () => {
-    render(
-      <Label
-        text="Username"
-        disabled
-      />
-    );
+  test('changes color when disabled', () => {
+    render(<Label text="Username" disabled />);
 
-    const label =
-      screen.getByTestId("label-component");
+    const label = screen.getByTestId('label-component');
 
-    expect(label).toHaveStyle(
-      "color: #999999"
-    );
+    expect(label).toHaveStyle('color: #999999');
   });
 });

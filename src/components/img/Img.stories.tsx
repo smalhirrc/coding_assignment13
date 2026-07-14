@@ -1,25 +1,27 @@
-import type { Meta, StoryObj } from "@storybook/react-webpack5" with { "resolution-mode": "import" };
-import Img from "./Img";
+import type { Meta, StoryObj } from '@storybook/react-webpack5' with {
+  'resolution-mode': 'import',
+};
+import Img from './Img';
 
 const meta: Meta<typeof Img> = {
-  title: "Components/Img",
+  title: 'Components/Img',
   component: Img,
 
   argTypes: {
     src: {
-      control: "text",
+      control: 'text',
     },
 
     alt: {
-      control: "text",
+      control: 'text',
     },
 
     width: {
-      control: "text",
+      control: 'text',
     },
 
     height: {
-      control: "text",
+      control: 'text',
     },
   },
 };
@@ -30,20 +32,20 @@ type Story = StoryObj<typeof Img>;
 
 export const Default: Story = {
   args: {
-    src: "https://picsum.photos/600/400",
-    alt: "Sample Image",
-    width: "600px",
-    height: "400px",
+    src: 'https://picsum.photos/600/400',
+    alt: 'Sample Image',
+    width: '600px',
+    height: '400px',
     disabled: false,
   },
 };
 
 export const Disabled: Story = {
   args: {
-    src: "https://picsum.photos/600/400",
-    alt: "Disabled Image",
-    width: "600px",
-    height: "400px",
+    src: 'https://picsum.photos/600/400',
+    alt: 'Disabled Image',
+    width: '600px',
+    height: '400px',
     disabled: true,
   },
 };

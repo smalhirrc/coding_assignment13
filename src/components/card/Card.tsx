@@ -1,14 +1,12 @@
-import styled from "styled-components";
-import { CardProps } from "./Card.types";
+import styled from 'styled-components';
+import { CardProps } from './Card.types';
 
 const StyledCard = styled.div<{
   backgroundColor?: string;
   disabled?: boolean;
 }>`
-  background-color: ${(props) =>
-    props.disabled
-      ? "#cccccc"
-      : props.backgroundColor || "#ffffff"};
+  background-color: ${props =>
+    props.disabled ? '#cccccc' : props.backgroundColor || '#ffffff'};
 
   border: 1px solid #dddddd;
   border-radius: 8px;
@@ -17,9 +15,8 @@ const StyledCard = styled.div<{
   width: 100%;
   box-sizing: border-box;
 
-  opacity: ${(props) => (props.disabled ? 0.6 : 1)};
-  cursor: ${(props) =>
-    props.disabled ? "not-allowed" : "default"};
+  opacity: ${props => (props.disabled ? 0.6 : 1)};
+  cursor: ${props => (props.disabled ? 'not-allowed' : 'default')};
 
   transition: 0.3s ease;
 
@@ -36,12 +33,7 @@ const Description = styled.p`
   margin: 0;
 `;
 
-const Card = ({
-  title,
-  description,
-  backgroundColor,
-  disabled,
-}: CardProps) => {
+const Card = ({ title, description, backgroundColor, disabled }: CardProps) => {
   return (
     <StyledCard
       backgroundColor={backgroundColor}
