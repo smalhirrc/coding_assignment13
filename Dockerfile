@@ -16,6 +16,6 @@ RUN npm install --legacy-peer-deps
 
 COPY . .
 
-EXPOSE 8083
+EXPOSE 8018
 
-CMD ["npm", "run", "storybook", "--", "-p", "8083"]
+CMD ["npm", "run", "storybook", "--", "-p", "8018"]
