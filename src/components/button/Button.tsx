@@ -24,13 +24,15 @@ const StyledButton = styled.button<{
 
 const Button = ({ label, backgroundColor, disabled, onClick }: ButtonProps) => {
   return (
-    <StyledButton
-      backgroundColor={backgroundColor}
-      disabled={disabled}
-      onClick={onClick}
-    >
-      {label}
-    </StyledButton>
+    <div>
+      <StyledButton
+        backgroundColor={backgroundColor}
+        disabled={disabled}
+        onClick={onClick}
+      >
+        {label}
+      </StyledButton>
+    </div>
   );
 };
 
